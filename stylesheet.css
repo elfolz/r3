@@ -1,0 +1,72 @@
+*:not(input) {
+	user-select: none;
+}
+:root {
+	--color-primary: #00cc99;
+	--color-accent: #9966cc;
+}
+body {
+	font-family: sans-serif;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+main {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: fit-content;
+	min-width: 220px;
+	transform: translate(-50%, -50%);
+}
+section {
+	display: flex;
+	align-items: center;
+}
+section:not(:first-of-type) {
+	margin-top: 12px;
+}
+label {
+	padding: 0 12px;
+  opacity: 0.25;
+}
+p {
+	text-align: center;
+}
+input, mark {
+	width: 64px;
+	height: 1em;
+	font-size: 1em;
+	line-height: 1em;
+	text-align: right;
+	border: none;
+	border-radius: 4px;
+	padding: .25em;
+}
+mark {
+	outline: none;
+	color: #333;
+	background-color: var(--color-primary);
+	user-select: none;
+	cursor: default;
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		color: #e6e6e6;
+		background-color: #121212;
+	}
+	input {
+		color: #e6e6e6;
+		background-color: rgba(255,255,255,0.1);
+	}
+}
+@media (prefers-color-scheme: light) {
+	body {
+		color: #333;
+		background-color: #e6e6e6;
+	}
+	input {
+		color: #333;
+		background-color: #fff;
+	}
+}
