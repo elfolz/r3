@@ -20,9 +20,9 @@ function init() {
 			mapToRadix: ['.', ',']
 		})
 		el.oninput = () => {
-			const v1 = parseInt(document.querySelector('#valor1')?.value)
-			const v2 = parseInt(document.querySelector('#valor2')?.value)
-			const v3 = parseInt(document.querySelector('#valor3')?.value)
+			const v1 = parseFloat(document.querySelector('#valor1')?.value?.replace(',', '.'))
+			const v2 = parseFloat(document.querySelector('#valor2')?.value?.replace(',', '.'))
+			const v3 = parseFloat(document.querySelector('#valor3')?.value?.replace(',', '.'))
 			if (!v1 || !v2 || !v3) return
 			document.querySelector('#valor4').innerHTML = (v2 * v3 / v1).toFixed(2)
 		}
