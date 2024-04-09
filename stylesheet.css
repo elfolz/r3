@@ -27,11 +27,15 @@ section:not(:first-of-type) {
 	margin-top: 12px;
 }
 label {
+	white-space: nowrap;
 	padding: 0 12px;
   opacity: 0.25;
 }
 p {
 	text-align: center;
+}
+input:focus {
+	outline: 1px solid var(--color-accent);
 }
 input, mark {
 	width: 64px;
