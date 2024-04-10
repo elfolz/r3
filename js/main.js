@@ -6,6 +6,13 @@ if (location.protocol.startsWith('https')) {
 	}
 }
 
+let installPWAPrompt
+
+window.addEventListener('beforeinstallprompt', e => {
+	e.preventDefault()
+	installPWAPrompt = e
+})
+
 function init() {
 	document.querySelectorAll('input').forEach(el => {
 		if (el.classList.contains('masked')) return
@@ -28,6 +35,11 @@ function init() {
 		}
 		el.classList.add('masked')
 	})
+	document.querySelector('#installPWA').onclick = e => {
+		if (!installPWAPrompt) return
+		installPWAPrompt.prompt()
+		installPWAPrompt = undefined
+	}
 }
 
 document.onreadystatechange = () => {
